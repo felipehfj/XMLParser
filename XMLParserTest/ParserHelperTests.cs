@@ -14,7 +14,7 @@ namespace XMLParserTest
 
             var propostaCliente = xml.ParseXML<XMLParser.Componentes.Cliente>();
 
-            Assert.NotNull(propostaCliente.Enderecos);
+            Assert.NotNull(propostaCliente?.Enderecos);
 
         }
 
@@ -29,7 +29,7 @@ namespace XMLParserTest
 
             var propostaCliente = json.ParseJSON<XMLParser.Componentes.Json.Root>();
 
-            Assert.NotNull(propostaCliente.Cliente.Enderecos);
+            Assert.NotNull(propostaCliente?.Cliente.Enderecos);
 
         }
 
@@ -43,9 +43,9 @@ namespace XMLParserTest
 
             var propostaCliente = json.ParseJSON<XMLParser.Componentes.Json.Root>();
 
-            Assert.NotNull(propostaCliente.Cliente.Enderecos);
+            Assert.NotNull(propostaCliente?.Cliente.Enderecos);
 
-            Assert.NotEmpty(propostaCliente.Cliente.Enderecos.Endereco);
+            Assert.NotEmpty(propostaCliente?.Cliente?.Enderecos?.Endereco);
 
         }
 
@@ -59,7 +59,7 @@ namespace XMLParserTest
 
             var propostaCliente = json.ParseJSON<XMLParser.Componentes.Json.Root>();
 
-            Assert.Null(propostaCliente.Cliente.Enderecos);
+            Assert.Null(propostaCliente?.Cliente.Enderecos);
 
         }
     }
