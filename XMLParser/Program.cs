@@ -1,7 +1,4 @@
-﻿using System.Xml.Linq;
-using XMLParser.Componentes;
-using XMLParser.Componentes.Json;
-using XMLParser.Helpers;
+﻿using XMLParser.Helpers;
 
 namespace XMLParser
 {
@@ -20,7 +17,7 @@ namespace XMLParser
             string xml2 = File.ReadAllText(xmlUri0ends);
             string xml3 = File.ReadAllText(xmlUri1end);
             string xml4 = File.ReadAllText(xmlUri2end);
-            
+
 
             var propostaCliente1 = xml1.ParseXML<XMLParser.Componentes.Cliente>();
             var propostaCliente2 = xml2.ParseXML<Componentes.Cliente>();

@@ -26,7 +26,7 @@ namespace XMLParser.Helpers
 
         public static T? ParseJSON<T>(this string @this) where T : class
         {
-            var settings = new JsonSerializerSettings() { NullValueHandling=NullValueHandling.Ignore} ;
+            var settings = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore };
             return JsonConvert.DeserializeObject<T>(@this, settings);
         }
 

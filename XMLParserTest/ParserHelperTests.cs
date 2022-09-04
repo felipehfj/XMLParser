@@ -1,5 +1,3 @@
-using XMLParser.Componentes;
-using XMLParser.Componentes.Json;
 using XMLParser.Helpers;
 
 namespace XMLParserTest
@@ -8,11 +6,11 @@ namespace XMLParserTest
     {
         [Theory]
         [InlineData(@"C:\Users\felip\source\repos\XMLParser\XMLParser\Dados\Evento_1_End.xml")]
-        [InlineData(@"C:\Users\felip\source\repos\XMLParser\XMLParser\Dados\Evento_2_Ends.xml")]        
+        [InlineData(@"C:\Users\felip\source\repos\XMLParser\XMLParser\Dados\Evento_2_Ends.xml")]
         public void ParseXML_PrecisaConterAtributoEnderecos(string uri)
         {
 
-            string xml = File.ReadAllText(uri);            
+            string xml = File.ReadAllText(uri);
 
             var propostaCliente = xml.ParseXML<XMLParser.Componentes.Cliente>();
 
@@ -21,9 +19,9 @@ namespace XMLParserTest
         }
 
 
-        [Theory]        
+        [Theory]
         [InlineData(@"C:\Users\felip\source\repos\XMLParser\XMLParser\Dados\Evento_1_End.json")]
-        [InlineData(@"C:\Users\felip\source\repos\XMLParser\XMLParser\Dados\Evento_2_Ends.json")]        
+        [InlineData(@"C:\Users\felip\source\repos\XMLParser\XMLParser\Dados\Evento_2_Ends.json")]
         public void ParseJSON_PrecisaConterAtributoEnderecos(string uri)
         {
 

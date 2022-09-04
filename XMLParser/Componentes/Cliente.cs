@@ -4,7 +4,7 @@ namespace XMLParser.Componentes
 {
     [XmlRoot(ElementName = "Endereco")]
     public class Endereco
-    {        
+    {
 
         [XmlElement(ElementName = "Logradouro")]
         public string Logradouro { get; set; }
@@ -64,7 +64,7 @@ namespace XMLParser.Componentes
     {
         [XmlElement(ElementName = "ProdutorParticipante")]
         public ProdutorParticipante ProdutorParticipante { get; set; }
-    }    
+    }
 
     [XmlRoot(ElementName = "CoberturaContratada")]
     public class CoberturaContratada
@@ -138,13 +138,13 @@ namespace XMLParser.Componentes
     {
         [XmlElement(ElementName = "CoberturaContratada")]
         public List<CoberturaContratada> CoberturaContratada { get; set; }
-    }    
+    }
 
     [XmlRoot(ElementName = "Cliente")]
     public class Cliente
     {
         Endereco? _endereco;
-        
+
 
         [XmlElement(ElementName = "Identificador")]
         public Guid Identificador { get; set; }
@@ -155,19 +155,21 @@ namespace XMLParser.Componentes
         [XmlElement(ElementName = "Enderecos")]
         public Enderecos? Enderecos { get; set; }
         [XmlElement(ElementName = "Endereco")]
-        public Endereco? Endereco { 
+        public Endereco? Endereco
+        {
             get { return _endereco; }
-            set {
+            set
+            {
                 if (value != null)
                 {
-                    if(Enderecos == null)
+                    if (Enderecos == null)
                     {
                         Enderecos = new Enderecos();
                     }
                     Enderecos.Endereco.Add(value);
                 }
-                
-                _endereco = value; 
+
+                _endereco = value;
             }
         }
         [XmlElement(ElementName = "Coberturas")]
